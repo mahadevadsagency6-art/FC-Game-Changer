@@ -1,157 +1,147 @@
-<!-- FC GameChanger - Single-file Landing Page
-
-Instructions:
-1) Save this file as `index.html`.
-2) Put your profile image (the red DP you shared) next to this file and name it `dp-red.jpg` (or update the <img> src below).
-3) Replace the TELEGRAM_LINK value in the <script> section with your real Telegram channel invite link.
-4) To deploy on Vercel: create a Git repo with this file, push, then import the repo into Vercel (or use `vercel` CLI).
-
-This is a mobile-first responsive landing page. Customize colors/text as needed.
--->
-
-<!doctype html>
-<html lang="hi">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>FC GameChanger - Join VIP</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FC GameChanger - Premium Predictions</title>
+
+  <meta name="description" content="FC GameChanger – Premium match predictions, fast alerts & 98% accuracy. Join our VIP Telegram now!" />
+
   <style>
-    :root{
-      --bg:#07140b; /* deep greenish */
-      --panel:#0f2a17;
-      --accent:#16a34a; /* green */
-      --accent-2:#10b981;
-      --muted:#9ca3af;
-      --glass: rgba(255,255,255,0.03);
-      --gold: #b58120;
-      --radius:18px;
+    /* RESET */
+    * {margin:0; padding:0; box-sizing:border-box; font-family:Arial, sans-serif;}
+
+    body {
+      background:#000;
+      color:#fff;
+      text-align:center;
+      overflow-x:hidden;
     }
-    *{box-sizing:border-box}
-    body{font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial; margin:0; background:radial-gradient(ellipse at center, rgba(16,36,18,0.65), var(--bg) 60%), var(--bg); color:#e6f7ea; -webkit-font-smoothing:antialiased}
-    .container{max-width:720px;margin:18px auto;padding:20px}
 
-    /* card */
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.04); border-radius:22px; padding:18px}
-
-    .top{display:flex;gap:14px;align-items:center}
-    .logo-wrap{width:88px;height:88px;border-radius:50%;background:conic-gradient(from 180deg at 50% 50%, rgba(22,163,74,0.18), rgba(16,185,129,0.08));display:flex;align-items:center;justify-content:center;padding:6px}
-    .logo-wrap img{width:100%;height:100%;object-fit:cover;border-radius:50%;box-shadow:0 6px 20px rgba(16,185,129,0.06) inset}
-    h1{margin:0;font-size:22px;letter-spacing:2px}
-    .subtitle{color:var(--muted);font-size:13px;margin-top:6px}
-
-    .banner{margin:16px 0;padding:10px 14px;background:linear-gradient(90deg, rgba(181,129,32,0.12), rgba(181,129,32,0.06));border-radius:12px;border:1px solid rgba(181,129,32,0.18);color:var(--gold);font-weight:600;text-align:center}
-
-    .stats{display:flex;gap:12px;margin:14px 0}
-    .stat{flex:1;background:var(--panel);padding:12px;border-radius:14px;border:1px solid rgba(255,255,255,0.02);text-align:center}
-    .stat .big{font-size:20px;font-weight:800;color:var(--accent)}
-    .stat .label{font-size:12px;color:var(--muted);margin-top:6px}
-
-    .cta{display:block;width:100%;background:linear-gradient(90deg,var(--accent),var(--accent-2));padding:14px 18px;border-radius:14px;text-align:center;color:#04210a;font-weight:800;font-size:16px;border:none;cursor:pointer;margin:8px 0}
-
-    .features{margin-top:12px;background:rgba(0,0,0,0.12);padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
-    .feature{display:flex;gap:12px;align-items:flex-start;padding:8px 0}
-    .feat-icon{width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,0.02);display:flex;align-items:center;justify-content:center;font-weight:700}
-    .feat-text{font-size:13px}
-    .sub{color:var(--muted);font-size:12px;margin-top:4px}
-
-    .footer-badge{margin-top:12px;padding:10px;border-radius:12px;background:rgba(255,255,255,0.02);border:1px solid rgba(16,185,129,0.06);display:flex;align-items:center;justify-content:space-between}
-
-    /* small screen tweaks */
-    @media(min-width:880px){
-      .container{max-width:980px}
-      h1{font-size:28px}
-      .logo-wrap{width:120px;height:120px}
+    /* PREMIUM GRADIENT BACKGROUND */
+    .bg {
+      position:fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      background: radial-gradient(circle at top, #ff1a1a33, #000000 70%);
+      z-index:-1;
     }
+
+    /* HEADER / HERO SECTION */
+    .hero {
+      padding:45px 20px 20px;
+    }
+
+    .hero img {
+      width:170px;
+      height:170px;
+      border-radius:50%;
+      border:4px solid #ff1a1a;
+      box-shadow:0 0 25px #ff1a1a66;
+    }
+
+    h1 {
+      font-size:36px;
+      margin-top:18px;
+      font-weight:700;
+      text-shadow:0 0 10px #ff1a1a99;
+    }
+
+    .tagline {
+      font-size:18px;
+      color:#ddd;
+      margin-top:8px;
+    }
+
+    /* STATS CARDS */
+    .stats {
+      display:flex;
+      justify-content:center;
+      gap:15px;
+      flex-wrap:wrap;
+      margin:25px 0;
+    }
+
+    .box {
+      background:#111;
+      padding:15px 25px;
+      border-radius:14px;
+      border:1px solid #222;
+      font-size:18px;
+      box-shadow:0 0 10px #ff1a1a33;
+    }
+
+    /* CTA BUTTON */
+    .join-btn {
+      background:linear-gradient(90deg, #ff1a1a, #b30000);
+      color:white;
+      padding:18px 30px;
+      border-radius:50px;
+      font-size:20px;
+      border:none;
+      cursor:pointer;
+      width:85%;
+      max-width:360px;
+      font-weight:700;
+      box-shadow:0 0 20px #ff1a1a55;
+      transition:0.2s;
+    }
+
+    .join-btn:hover {
+      transform:scale(1.03);
+      box-shadow:0 0 30px #ff1a1a88;
+    }
+
+    /* FEATURES */
+    .features {
+      margin-top:45px;
+      padding-bottom:50px;
+    }
+
+    .feature-item {
+      margin:12px 0;
+      font-size:19px;
+      background:#0d0d0d;
+      padding:12px;
+      width:85%;
+      max-width:380px;
+      border-radius:10px;
+      margin-left:auto;
+      margin-right:auto;
+      border:1px solid #1a1a1a;
+      box-shadow:0 0 10px #ff1a1a22;
+    }
+
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="card">
-      <div class="top">
-        <div class="logo-wrap">
-          <!-- Put your red DP file as dp-red.jpg in same folder -->
-          <img src="dp-red.jpg" alt="FC GameChanger Logo" id="dpImg" />
-        </div>
-        <div style="flex:1">
-          <h1>FC GAMECHANGER ⚽</h1>
-          <div class="subtitle">Premier Football Prediction Channel</div>
-        </div>
-        <div style="text-align:right">
-          <div style="font-size:12px;color:var(--muted)">Verified</div>
-          <div style="margin-top:6px;font-weight:700;color:var(--accent)">Free VIP</div>
-        </div>
-      </div>
 
-      <div class="banner">🔥 Exclusive: Free VIP Access - Join 10,000+ Winners!</div>
+  <div class="bg"></div>
 
-      <div class="stats">
-        <div class="stat">
-          <div class="big">98%</div>
-          <div class="label">Accuracy</div>
-        </div>
-        <div class="stat">
-          <div class="big">65K+</div>
-          <div class="label">Members</div>
-        </div>
-        <div class="stat">
-          <div class="big">24/7</div>
-          <div class="label">Live Tips</div>
-        </div>
-      </div>
+  <div class="hero">
+    <img src="22f483627b5f6b277721f7adaff51842.jpg" alt="FC GameChanger" />
 
-      <button class="cta" id="joinBtn">⚽ JOIN VIP CHANNEL FREE</button>
+    <h1>FC GAMECHANGER ⚽🔥</h1>
+    <div class="tagline">Ultra Premium Match Predictions • Instant Alerts</div>
 
-      <div class="features">
-        <div class="feature">
-          <div class="feat-icon">🎯</div>
-          <div>
-            <div class="feat-text">Daily Match Predictions</div>
-            <div class="sub">All major leagues & tournaments covered</div>
-          </div>
-        </div>
-        <div class="feature">
-          <div class="feat-icon">📊</div>
-          <div>
-            <div class="feat-text">Expert Analysis & Stats</div>
-            <div class="sub">In-depth team & player insights</div>
-          </div>
-        </div>
-        <div class="feature">
-          <div class="feat-icon">💰</div>
-          <div>
-            <div class="feat-text">Winning Strategies</div>
-            <div class="sub">Proven betting tips & guidance</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-badge">
-        <div style="display:flex;gap:10px;align-items:center">
-          <div style="width:36px;height:36px;border-radius:50%;background:rgba(16,185,129,0.12);display:flex;align-items:center;justify-content:center">F</div>
-          <div style="color:var(--muted)">11,234 joined this week</div>
-        </div>
-        <div style="color:var(--muted);font-size:13px">🔒 100% Free - No Hidden Fees • Instant Access</div>
-      </div>
-
+    <div class="stats">
+      <div class="box">🔥 98% Accuracy</div>
+      <div class="box">👥 65K+ Members</div>
+      <div class="box">⚡ Instant Tips</div>
     </div>
 
-    <div style="text-align:center;margin-top:12px;color:var(--muted);font-size:13px">
-      ✓ Verified Tips &nbsp;&nbsp; ✓ No Payment &nbsp;&nbsp; ✓ Safe & Secure
-    </div>
+    <button class="join-btn" onclick="window.location='https://t.me/+MFdq6qFMpkMxOWJl'">
+      JOIN VIP TELEGRAM CHANNEL
+    </button>
   </div>
 
-  <script>
-    // Replace with your channel invite link
-    const TELEGRAM_LINK = 'https://t.me/+MFdq6qFMpkMxOWJl';
+  <div class="features">
+    <div class="feature-item">✔ Real-Time Match Predictions</div>
+    <div class="feature-item">✔ Expert Stats & Analysis</div>
+    <div class="feature-item">✔ Daily High-Accuracy Tips</div>
+    <div class="feature-item">✔ Fast Telegram Notifications</div>
+    <div class="feature-item">✔ Safe, Simple & Trusted</div>
+  </div>
 
-    document.getElementById('joinBtn').addEventListener('click', ()=>{
-      window.open(TELEGRAM_LINK,'_blank');
-    });
-
-    // Optional: if image fails to load, show fallback
-    const dp = document.getElementById('dpImg');
-    dp.onerror = ()=>{ dp.src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><rect width="100%" height="100%" fill="%230f2a17"/><text x="50%" y="50%" fill="%2316a34a" font-size="28" font-family="Inter,Arial" dominant-baseline="middle" text-anchor="middle">FC GameChanger</text></svg>' }
-  </script>
 </body>
 </html>
